@@ -8,12 +8,8 @@
             <div>
                 <img src="{{ item.image | image_url: width: 200 }}"/>
                 <h2>{{ item.title }}</h2>
-                <p>{{ item.price | money_with_currency }}</p>
+                <p>{{ item.final_line_price | money_with_currency }} Quantity: {{ item.quantity }}</p>
                 <input type="number" name="updates[]" value="{{ item.quantity }}" />
-                <p>
-                    Quantity: {{ item.quantity }}, 
-                    Price: {{ item.final_line_price | money_with_currency }}
-                </p>
                 <button type="submit" name="update">
                     Update
                 </button>
