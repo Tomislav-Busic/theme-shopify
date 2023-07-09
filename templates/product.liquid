@@ -5,4 +5,11 @@
 </div>
 
 {% form 'product', product: product %}
+    <select name="id">
+        {% for product.variants %}
+            <option value="{{ variant.id }}">
+                  {{ variant.title }}  
+            </option>
+        {% endfor %}
+    </select>
 {% endform %}
