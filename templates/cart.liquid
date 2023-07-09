@@ -2,15 +2,22 @@
     <h1>Cart</h1>
 
     {% for item in cart.items %}
-        <img src="{{ item.image | image_url: width: 200 }}"/>
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.price | money_with_currency }}</p>
-        <a href="{{ item.url_to_remove }}">Remove</a>
+        <div>
+            <img src="{{ item.image | image_url: width: 200 }}"/>
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.price | money_with_currency }}</p>
+            <input name="updates[]" value="{{ item.quantity }}" />
+            <a href="{{ item.url_to_remove }}">Remove</a>
+        </div>
     {% endfor %}
 
         <hr/>
 
         <p>Total: {{ cart.total_price | money_with_currency }}</p>
+
+        <button type="submit" name="update">
+            Update
+        </button>
 
         <button type="submit" name="checkout">
             Checkout
