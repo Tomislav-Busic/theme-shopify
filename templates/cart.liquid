@@ -10,7 +10,10 @@
                 <h2>{{ item.title }}</h2>
                 <p>{{ item.price | money_with_currency }}</p>
                 <input type="number" name="updates[]" value="{{ item.quantity }}" />
-                <p>Quantity: {{ item.quantity }}</p>
+                <p>
+                    Quantity: {{ item.quantity }}, 
+                    Price: {{ item.final_line_price | money_with_currency }}
+                </p>
                 <button type="submit" name="update">
                     Update
                 </button>
