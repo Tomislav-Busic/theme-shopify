@@ -2,8 +2,8 @@
 
 {% for product in collections['frontpage'].products %}
     <div>
-        <img src="{{ product.featured_image | image_url }}"/>
-        <p>{{ product.price }}</p>
+        <img src="{{ product.featured_image | image_url: width: 300 }}"/>
+        <p>{{ product.price | money_with_currency }}</p>
         <p>{{ product.title }}</p>
     </div>
     {{- product.title | link_to: product.url }}
