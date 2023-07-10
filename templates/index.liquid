@@ -1,12 +1,12 @@
 <h2>{{ collections['frontpage'].title }}</h2>
 
 {% for product in collections['frontpage'].products %}
-    <div>
-        <a href="{{ product.url }}">
-            <img src="{{ product.featured_image | image_url: width: 300 }}"/>
-            <p>{{ product.price | money_with_currency }}</p>
-            <p>{{ product.title }}</p>
-        </a>
-    </div>
-    {{- product.title | link_to: product.url }}
+  <div>
+    <a href="{{ product.url }}">
+      <img src="{{ product.featured_image | image_url: width: 300 }}" />
+      <p>{{ product.price | money_with_currency }}</p>
+      <p>{{ product.title }}</p>
+    </a>
+  </div>
+  {{- product.title | link_to: product.url }}
 {% endfor %}
