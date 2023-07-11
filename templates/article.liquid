@@ -5,5 +5,8 @@
 <div>{{ article.excerpt }}</div>
 
 {% if article.comments_enabled? %}
-  asdf
+  <h2>Leave a comment</h2>
+  {% form 'new_comment', article %}
+    <button type="submit">Add comment</button>
+  {% endform %}
 {% endif %}
